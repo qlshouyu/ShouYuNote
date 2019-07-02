@@ -1,0 +1,17 @@
+{
+  "files.autoSave": "onFocusChange",
+  "go.buildOnSave": true,
+  "go.lintOnSave": true,
+  "go.vetOnSave": true,
+  "go.buildTags": "",
+  "go.buildFlags": [],
+  "go.lintFlags": [],
+  "go.vetFlags": [],
+  "go.coverOnSave": false,
+  "go.useCodeSnippetsOnFunctionSuggest": false,
+  "go.formatOnSave": true,
+  "go.formatTool": "goreturns",
+  "go.goroot": "/usr/lib/go-1.10",
+  "go.gopath": "/home/lugao2/workspaces/go",
+  "go.gocodeAutoBuild": true
+}

@@ -1,0 +1,56 @@
+.table-wrap {
+  background: #fff;
+  border-bottom: 1px solid transparent;
+}
+.table-wrap:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.table-wrap .pagination {
+  margin-bottom: 20px;
+}
+.table-wrap a {
+  text-decoration: none;
+  color: #409eff;
+}
+.table-wrap .simular-button {
+  color: #000;
+}
+.handle-box {
+  text-align: left;
+  margin-top: -10px;
+}
+.handle-box .cl-search:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.handle-box .cl-search .left {
+  float: left;
+}
+.handle-box .cl-search .right {
+  float: right;
+  border: none;
+  margin-bottom: -18px;
+}
+.handle-box .cl-search .el-form-item {
+  margin-bottom: 10px;
+}
+.handle-box .cl-search .el-input__inner {
+  border-radius: 16px;
+}
+.handle-box .cl-search .el-button {
+  color: #00ADFF;
+  border: 1px solid #00ADFF;
+}
+.handle-box .cl-search .el-button--primary {
+  color: #fff;
+}
+.handle-box .cl-opr {
+  border-top: 1px solid #E2E9F5;
+  padding: 10px 0px 10px 0px;
+}
+.pagination .el-input__inner {
+  border-radius: 14px;
+}

@@ -1,0 +1,19 @@
+.leftMenu {
+  width: 180px;
+  height: 100%;
+}
+.leftMenu .cloud-title {
+  line-height: 48px;
+  height: 48px;
+  padding-left: 20px;
+  border-bottom: 1px solid #dbe1ea;
+  /* font: 20px bold; */
+}
+.leftMenu .el-menu-item:hover {
+  background-color: #e5f6ff !important;
+  border-left: 3px solid #00adff;
+}
+.leftMenu .is-active {
+  background-color: #e5f6ff !important;
+  border-left: 3px solid #00adff;
+}
