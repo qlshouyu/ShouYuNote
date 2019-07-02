@@ -11,7 +11,7 @@
               <i class="el-icon-location"></i>
               <span>笔记本</span>
             </template>
-            <el-menu-item index="1-1">笔记本一</el-menu-item>
+            <el-menu-item index="/home/note">笔记本一</el-menu-item>
             <el-menu-item index="1-2">笔记本二</el-menu-item>
             <el-menu-item-group title="分组2">
               <el-menu-item index="1-3">选项3</el-menu-item>

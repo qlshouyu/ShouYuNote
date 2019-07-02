@@ -1,10 +1,10 @@
 <template>
-  <div class="yu-drap-box">
-    <div class="left" v-bind:style="leftStyle" id="left">
+  <div class="yu-drap-box" ref="box">
+    <div class="left" v-bind:style="leftStyle" ref="left">
       <slot name="yu-left"></slot>
     </div>
-    <div class="lineMove" id="drapLine"  @mousedown.stop="mouseDown" ></div>
-    <div class="right" v-bind:style="rightStyle" id="right">
+    <div class="lineMove" ref="drapLine"  @mousedown.stop="mouseDown" ></div>
+    <div class="right" v-bind:style="rightStyle" ref="right">
       <slot name="yu-right"></slot>
     </div>
   </div>
@@ -31,6 +31,7 @@ export default {
   },
   data () {
     return {
+      box: undefined,
       drapLine: undefined,
       menuLeft: undefined,
       menuRight: undefined,
@@ -51,13 +52,15 @@ export default {
   created () {
     var that = this
     this.$nextTick(function () {
-      that.drapLine = document.getElementById('drapLine')
-      that.menuLeft = document.getElementById('left')
-      that.menuRight = document.getElementById('right')
-      var historyWidth = localStorage.getItem('sliderWidth')
+      that.box = that.$refs.box
+      that.drapLine = that.$refs.drapLine
+      that.menuLeft = that.$refs.left
+      that.menuRight = that.$refs.right
+      var historyWidth = localStorage.getItem('sliderWidth' + this._uid)
       if (historyWidth) {
         that.menuLeft.style.width = historyWidth
         that.menuRight.style.left = historyWidth
+        this.menuRight.style.width = this.box.offsetWidth - this.menuLeft.offsetWidth - 5 + 'px'
       }
     })
   },
@@ -78,6 +81,7 @@ export default {
         leftWidth = leftWidth > this.maxWidth ? this.maxWidth : leftWidth
         this.menuLeft.style.width = leftWidth + 'px'
         this.menuRight.style.left = leftWidth + 'px'
+        this.menuRight.style.width = this.box.offsetWidth - this.menuLeft.offsetWidth - 5 + 'px'
       }
     },
     mouseUp (e) {
@@ -85,7 +89,7 @@ export default {
       this.isDrap = false
       document.onmousemove = null
       document.onmouseup = null
-      localStorage.setItem('sliderWidth', this.menuLeft.style.width)
+      localStorage.setItem('sliderWidth' + this._uid, this.menuLeft.style.width)
     }
   }
 }
@@ -94,8 +98,11 @@ export default {
 .yu-drap-box {
   width:100%;
   height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
   .left {
-    width: 250px;
+    width: 20%;
     background-color: #25313e;
     height: 100%;
     float: left;
@@ -108,10 +115,9 @@ export default {
     width: 5px;
   }
   .right {
-    width: 250px;
+    width: 80%;
     height: 100%;
     float: left;
-    background-color: gray
   }
 }
 </style>

@@ -2,8 +2,9 @@
   <div class="yu-container">
     <div class="top"></div>
     <div class="main">
-      <yu-drap-view>
+      <yu-drap-view :maxWidth="300" :minWidth="60">
         <v-left slot="yu-left"></v-left>
+        <router-view slot="yu-right"/>
       </yu-drap-view>
     </div>
   </div>

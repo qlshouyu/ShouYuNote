@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Main from '@/pages/Main'
 import Home from '@/pages/Home'
 import Login from '@/pages/Login'
+import EditNote from '@/pages/note/NoteEdit'
 
 Vue.use(Router)
 
@@ -14,7 +15,13 @@ export default new Router({
       component: Main,
       children: [
         {path: '/', redirect: '/home'},
-        {path: '/home', component: Home},
+        {
+          path: '/home',
+          component: Home,
+          children: [
+            {path: '/home/note', component: EditNote}
+          ]
+        },
         {path: '/login', component: Login}
       ]
     }
